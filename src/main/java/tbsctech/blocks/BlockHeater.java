@@ -7,14 +7,20 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import tbsctech.creativetab.TabTbscTech;
 import tbsctech.reference.Reference;
 import tbsctech.tile.TileHeater;
+
+import java.util.Random;
 
 public class BlockHeater extends BlockBase implements ITileEntityProvider {
 
@@ -36,12 +42,44 @@ public class BlockHeater extends BlockBase implements ITileEntityProvider {
     }
 
     @Override
-    public void onBlockAdded(World world, int x, int y, int z) {
-        super.onBlockAdded(world, x, y, z);
-    }
-
-    @Override
     public void breakBlock(World world, int x, int y, int z, Block p_149749_5_, int p_149749_6_) {
+        TileHeater te = (TileHeater) world.getTileEntity(x, y, z);
+        if (te != null) {
+            for (int i1 = 0; i1 < te.getSizeInventory(); ++i1) {
+                ItemStack itemstack = te.getStackInSlot(i1);
+
+                if (itemstack != null) {
+                    Random random = new Random();
+                    float f = random.nextFloat() * 0.8F + 0.1F;
+                    float f1 = random.nextFloat() * 0.8F + 0.1F;
+                    float f2 = random.nextFloat() * 0.8F + 0.1F;
+
+                    while (itemstack.stackSize > 0) {
+                        int j1 = random.nextInt(21) + 10;
+
+                        if (j1 > itemstack.stackSize)
+                        {
+                            j1 = itemstack.stackSize;
+                        }
+
+                        itemstack.stackSize -= j1;
+                        EntityItem entityitem = new EntityItem(world, (double)((float)x + f), (double)((float)y + f1), (double)((float)z + f2), new ItemStack(itemstack.getItem(), j1, itemstack.getItemDamage()));
+
+                        if (itemstack.hasTagCompound()) {
+                            entityitem.getEntityItem().setTagCompound((NBTTagCompound)itemstack.getTagCompound().copy());
+                        }
+
+                        float f3 = 0.05F;
+                        entityitem.motionX = (double)((float) random.nextGaussian() * f3);
+                        entityitem.motionY = (double)((float) random.nextGaussian() * f3 + 0.2F);
+                        entityitem.motionZ = (double)((float) random.nextGaussian() * f3);
+                        world.spawnEntityInWorld(entityitem);
+                    }
+                }
+            }
+
+            world.func_147453_f(x, y, z, p_149749_5_);
+        }
         super.breakBlock(world, x, y, z, p_149749_5_, p_149749_6_);
         world.removeTileEntity(x, y, z);
     }
@@ -74,6 +112,8 @@ public class BlockHeater extends BlockBase implements ITileEntityProvider {
 
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase elb, ItemStack itemStack) {
+        if (itemStack.hasDisplayName())
+            ((TileHeater) world.getTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
         int whichDirectionFacing = MathHelper.floor_double((double)(elb.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
         world.setBlockMetadataWithNotify(x, y, z, whichDirectionFacing, 2);
     }
