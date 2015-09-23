@@ -1,4 +1,4 @@
-package tbsctech.tile;
+package tbsctech.machines.heater;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

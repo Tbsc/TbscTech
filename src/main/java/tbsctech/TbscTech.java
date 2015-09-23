@@ -5,7 +5,9 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.client.Minecraft;
+import tbsctech.handler.GuiHandlerTT;
 import tbsctech.init.BlockInit;
 import tbsctech.init.ItemInit;
 import tbsctech.init.RecipeInit;
@@ -35,6 +37,7 @@ public class TbscTech {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         RecipeInit.init();
+        NetworkRegistry.INSTANCE.registerGuiHandler(this.tbscTech, new GuiHandlerTT());
     }
 
 }

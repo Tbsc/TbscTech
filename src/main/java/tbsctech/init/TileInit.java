@@ -1,7 +1,7 @@
 package tbsctech.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import tbsctech.tile.TileHeater;
+import tbsctech.machines.heater.TileHeater;
 
 public class TileInit {
 

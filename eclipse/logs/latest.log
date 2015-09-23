@@ -1,0 +1,25 @@
+[15:35:47] [main/INFO]: Logging in with username & password
+[15:35:54] [main/INFO]: Setting user: Tbsc
+[15:35:56] [Client thread/INFO]: LWJGL Version: 2.9.1
+[15:35:57] [Client thread/ERROR]: Couldn't initialize twitch stream
+[15:36:06] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:TbscTech
+[15:36:07] [Sound Library Loader/INFO]: Sound engine started
+[15:36:10] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[15:36:10] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[15:36:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:TbscTech
+[15:36:10] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[15:36:11] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[15:36:11] [Sound Library Loader/INFO]: Sound engine started
+[15:36:17] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[15:36:17] [Server thread/INFO]: Generating keypair
+[15:36:17] [Server thread/INFO]: Preparing start region for level 0
+[15:36:18] [Server thread/INFO]: Changing view distance to 7, from 10
+[15:36:19] [Server thread/INFO]: Tbsc[local:E:44c1816b] logged in with entity id 0 at (11.96729898170901, 4.0, 4.329685226961425)
+[15:36:19] [Server thread/INFO]: Tbsc joined the game
+[15:37:13] [Client thread/INFO]: Stopping!
+[15:37:13] [Server thread/INFO]: Stopping server
+[15:37:13] [Server thread/INFO]: Saving players
+[15:37:13] [Server thread/INFO]: Saving worlds
+[15:37:13] [Server thread/INFO]: Saving chunks for level 'Test World'/Overworld
+[15:37:13] [Server thread/INFO]: Saving chunks for level 'Test World'/Nether
+[15:37:13] [Server thread/INFO]: Saving chunks for level 'Test World'/The End

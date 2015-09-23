@@ -2,7 +2,7 @@ package tbsctech.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import tbsctech.blocks.BlockBase;
-import tbsctech.blocks.BlockHeater;
+import tbsctech.machines.heater.BlockHeater;
 import tbsctech.util.NameUtil;
 
 public class BlockInit {
