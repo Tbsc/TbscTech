@@ -9,13 +9,10 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import org.lwjgl.opengl.GL11;
-import tbsctech.init.TabInit;
-import tbsctech.main.TbscTech;
+import tbsctech.creativetab.TabTbscTech;
 import tbsctech.reference.Reference;
 import tbsctech.tile.TileHeater;
 
@@ -26,7 +23,7 @@ public class BlockHeater extends BlockBase implements ITileEntityProvider {
         this.setBlockName(unlocalizedName);
         this.setHardness(2.5f);
         this.setResistance(12.5f);
-        this.setCreativeTab(TabInit.tbscTechTab);
+        this.setCreativeTab(TabTbscTech.tabTbscTech);
         this.setHarvestLevel("pickaxe", 2);
         this.isBlockContainer = true;
     }

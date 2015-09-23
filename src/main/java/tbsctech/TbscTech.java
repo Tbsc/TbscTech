@@ -1,4 +1,4 @@
-package tbsctech.main;
+package tbsctech;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -13,7 +13,7 @@ import tbsctech.init.TileInit;
 import tbsctech.proxy.IProxy;
 import tbsctech.reference.Reference;
 
-@Mod(modid = Reference.MODID, version = Reference.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class TbscTech {
 
     @Mod.Instance(Reference.MODID)
